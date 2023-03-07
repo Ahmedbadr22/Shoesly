@@ -15,6 +15,8 @@ class App : Application() {
             modules(
                 listOf(
                     appModule,
+                    clientApiModule,
+                    daoModule,
                     dataSourceModule,
                     repositoryModule,
                     useCaseModule,

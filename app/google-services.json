@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "704106402674",
+    "project_id": "shoesly-dbbb4",
+    "storage_bucket": "shoesly-dbbb4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704106402674:android:a2bcfb76565a34f69dc3eb",
+        "android_client_info": {
+          "package_name": "com.ab.dev.shoesly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704106402674-fe07bjjr2uohpd0k22r5fh2ndafd4l6n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ab.dev.shoesly",
+            "certificate_hash": "21f1d32636c4ab4a95d7ce33466a53bed09f079f"
+          }
+        },
+        {
+          "client_id": "704106402674-s02noi4hd6s95u7v00m6jc71gtcf9tve.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMUXX2YM2r4uRPOvFBTCzij8KKr89-El8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704106402674-s02noi4hd6s95u7v00m6jc71gtcf9tve.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

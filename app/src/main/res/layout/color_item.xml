@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="color"
+            type="com.ab.dev.shoesly.domain.models.data.Color" />
+
+        <variable
+            name="clickListener"
+            type="com.ab.dev.shoesly.app.utils.callback.AdapterClickListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="?attr/colorPrimary"
+        android:layout_marginEnd="5dp"
+        android:onClick="@{() -> clickListener.onClick(color)}"
+        setStringColorAsCardBackgroundColor="@{color.hexColor}"
+        app:cardCornerRadius="100dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/icon_true"
+            isChecked="@{color.checked}"
+            android:contentDescription="@string/selected_color" />
+    </com.google.android.material.card.MaterialCardView>
+</layout>

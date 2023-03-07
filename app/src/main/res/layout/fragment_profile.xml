@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:background="?attr/background"
+        tools:context=".presentation.fragments.profile.view.ProfileFragment">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayoutProfile"
+            style="@style/Widget.MaterialComponents.AppBarLayout.Surface"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/background"
+            android:clipToPadding="true"
+            app:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolBarProfile"
+                style="@style/Widget.MaterialComponents.Toolbar.Surface"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/background"
+                app:title="@string/profile"
+                app:titleTextAppearance="@style/TextAppearance.AppCompat.Large"
+                app:titleTextColor="?attr/colorPrimary" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayoutProfile"
+            android:scrollbars="none"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutProfileActions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingVertical="8dp"
+                tools:layout_editor_absoluteY="56dp">
+
+                <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+                    android:id="@+id/circularRevealCardView"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    app:cardCornerRadius="100dp"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/ivProfileImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/profile_image"
+                        tools:src="@tools:sample/avatars" />
+
+                </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+                <TextView
+                    android:id="@+id/tvUserFullName"
+                    style="@style/TextAppearance.Material3.TitleLarge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="64dp"
+                    android:layout_marginTop="8dp"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:text="Ahmed Badr" />
+
+                <TextView
+                    android:id="@+id/tvPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="64dp"
+                    android:layout_marginTop="8dp"
+                    android:textAlignment="center"
+                    tools:text="+021222742623" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/mdDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="32dp"
+                    android:layout_marginVertical="16dp" />
+
+               <com.google.android.material.card.MaterialCardView
+                   android:id="@+id/cardViewEditProfile"
+                   android:layout_marginTop="0dp"
+                   style="@style/Base.Widget.Material3.CardView.ProfileClickableCard">
+
+                   <androidx.constraintlayout.widget.ConstraintLayout
+                       android:id="@+id/editProfile"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent">
+
+                       <ImageView
+                           android:id="@+id/ivProfileIcon"
+                           android:layout_width="30dp"
+                           android:layout_height="30dp"
+                           android:layout_marginStart="16dp"
+                           android:src="@drawable/user_icon"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toTopOf="parent"
+                           android:contentDescription="@string/edit_profile_icon" />
+
+                       <TextView
+                           android:id="@+id/textView2"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginHorizontal="16dp"
+                           android:text="@string/edit_profile"
+                           style="@style/TextAppearance.Material3.TitleMedium"
+                           app:layout_constraintBottom_toBottomOf="@+id/ivProfileIcon"
+                           app:layout_constraintEnd_toStartOf="@+id/ivArrow"
+                           app:layout_constraintStart_toEndOf="@+id/ivProfileIcon"
+                           app:layout_constraintTop_toTopOf="@+id/ivProfileIcon" />
+
+                       <ImageView
+                           android:id="@+id/ivArrow"
+                           android:layout_width="25dp"
+                           android:layout_height="25dp"
+                           android:layout_marginEnd="16dp"
+                           android:src="@drawable/arrow_forward_ios"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintTop_toTopOf="parent"
+                           android:contentDescription="@string/arrow" />
+                   </androidx.constraintlayout.widget.ConstraintLayout>
+               </com.google.android.material.card.MaterialCardView>
+
+               <com.google.android.material.card.MaterialCardView
+                   android:id="@+id/cardViewEditAddress"
+                   style="@style/Base.Widget.Material3.CardView.ProfileClickableCard">
+
+                   <androidx.constraintlayout.widget.ConstraintLayout
+                       android:id="@+id/editAddress"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent">
+
+                       <ImageView
+                           android:id="@+id/ivAddressIcon"
+                           android:layout_width="30dp"
+                           android:layout_height="30dp"
+                           android:layout_marginStart="16dp"
+                           android:src="@drawable/location"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toTopOf="parent"
+                           android:contentDescription="@string/edit_profile_icon" />
+
+                       <TextView
+                           android:id="@+id/tvAddress"
+                           style="@style/TextAppearance.Material3.TitleMedium"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginHorizontal="16dp"
+                           android:text="@string/address"
+                           app:layout_constraintBottom_toBottomOf="@+id/ivAddressIcon"
+                           app:layout_constraintEnd_toStartOf="@+id/imageView5"
+                           app:layout_constraintStart_toEndOf="@+id/ivAddressIcon"
+                           app:layout_constraintTop_toTopOf="@+id/ivAddressIcon" />
+
+                       <ImageView
+                           android:id="@+id/imageView5"
+                           android:layout_width="25dp"
+                           android:layout_height="25dp"
+                           android:layout_marginEnd="16dp"
+                           android:contentDescription="@string/arrow"
+                           android:src="@drawable/arrow_forward_ios"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintTop_toTopOf="parent" />
+                   </androidx.constraintlayout.widget.ConstraintLayout>
+               </com.google.android.material.card.MaterialCardView>
+
+               <com.google.android.material.card.MaterialCardView
+                   android:id="@+id/cardViewEditNotification"
+                   style="@style/Base.Widget.Material3.CardView.ProfileClickableCard">
+
+                   <androidx.constraintlayout.widget.ConstraintLayout
+                       android:id="@+id/editNotification"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent">
+
+                       <ImageView
+                           android:id="@+id/ivNotificationIcon"
+                           android:layout_width="30dp"
+                           android:layout_height="30dp"
+                           android:layout_marginStart="16dp"
+                           android:src="@drawable/notification"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toTopOf="parent"
+                           android:contentDescription="@string/edit_profile_icon" />
+
+                       <TextView
+                           android:id="@+id/tvNotification"
+                           style="@style/TextAppearance.Material3.TitleMedium"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginHorizontal="16dp"
+                           android:text="@string/notification"
+                           app:layout_constraintBottom_toBottomOf="@+id/ivNotificationIcon"
+                           app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                           app:layout_constraintStart_toEndOf="@+id/ivNotificationIcon"
+                           app:layout_constraintTop_toTopOf="@+id/ivNotificationIcon" />
+
+                       <ImageView
+                           android:id="@+id/imageView2"
+                           android:layout_width="25dp"
+                           android:layout_height="25dp"
+                           android:layout_marginEnd="16dp"
+                           android:contentDescription="@string/arrow"
+                           android:src="@drawable/arrow_forward_ios"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintTop_toTopOf="parent" />
+                   </androidx.constraintlayout.widget.ConstraintLayout>
+               </com.google.android.material.card.MaterialCardView>
+
+               <com.google.android.material.card.MaterialCardView
+                   android:id="@+id/cardViewEditPayment"
+                   style="@style/Base.Widget.Material3.CardView.ProfileClickableCard">
+
+                   <androidx.constraintlayout.widget.ConstraintLayout
+                       android:id="@+id/editPayment"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent">
+
+                       <ImageView
+                           android:id="@+id/ivPaymentIcon"
+                           android:layout_width="30dp"
+                           android:layout_height="30dp"
+                           android:layout_marginStart="16dp"
+                           android:src="@drawable/wallet"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toTopOf="parent"
+                           android:contentDescription="@string/edit_profile_icon" />
+
+                       <TextView
+                           android:id="@+id/tvPayment"
+                           style="@style/TextAppearance.Material3.TitleMedium"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginHorizontal="16dp"
+                           android:text="@string/payment"
+                           app:layout_constraintBottom_toBottomOf="@+id/ivPaymentIcon"
+                           app:layout_constraintEnd_toStartOf="@+id/imageView3"
+                           app:layout_constraintStart_toEndOf="@+id/ivPaymentIcon"
+                           app:layout_constraintTop_toTopOf="@+id/ivPaymentIcon" />
+
+                       <ImageView
+                           android:id="@+id/imageView3"
+                           android:layout_width="25dp"
+                           android:layout_height="25dp"
+                           android:layout_marginEnd="16dp"
+                           android:contentDescription="@string/arrow"
+                           android:src="@drawable/arrow_forward_ios"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintTop_toTopOf="parent" />
+                   </androidx.constraintlayout.widget.ConstraintLayout>
+               </com.google.android.material.card.MaterialCardView>
+               <com.google.android.material.card.MaterialCardView
+                   android:id="@+id/cardViewEditLanguage"
+                   style="@style/Base.Widget.Material3.CardView.ProfileClickableCard">
+
+                   <androidx.constraintlayout.widget.ConstraintLayout
+                       android:id="@+id/editLanguage"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent">
+
+                       <ImageView
+                           android:id="@+id/ivLanguageIcon"
+                           android:layout_width="30dp"
+                           android:layout_height="30dp"
+                           android:layout_marginStart="16dp"
+                           android:src="@drawable/earth"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toTopOf="parent"
+                           android:contentDescription="@string/edit_profile_icon" />
+
+                       <TextView
+                           android:id="@+id/tvLanguage"
+                           style="@style/TextAppearance.Material3.TitleMedium"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginHorizontal="16dp"
+                           android:text="@string/language"
+                           app:layout_constraintBottom_toBottomOf="@+id/ivLanguageIcon"
+                           app:layout_constraintEnd_toStartOf="@+id/tvCurrentLanguage"
+                           app:layout_constraintStart_toEndOf="@+id/ivLanguageIcon"
+                           app:layout_constraintTop_toTopOf="@+id/ivLanguageIcon" />
+
+                       <ImageView
+                           android:id="@+id/imageView4"
+                           android:layout_width="25dp"
+                           android:layout_height="25dp"
+                           android:layout_marginEnd="16dp"
+                           android:contentDescription="@string/arrow"
+                           android:src="@drawable/arrow_forward_ios"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintTop_toTopOf="parent" />
+
+                       <TextView
+                           android:id="@+id/tvCurrentLanguage"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginEnd="8dp"
+                           style="@style/TextAppearance.Material3.TitleMedium"
+                           tools:text="English (US)"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintEnd_toStartOf="@+id/imageView4"
+                           app:layout_constraintTop_toTopOf="parent" />
+                   </androidx.constraintlayout.widget.ConstraintLayout>
+               </com.google.android.material.card.MaterialCardView>
+               <com.google.android.material.card.MaterialCardView
+                   android:id="@+id/cardViewEditDarkMode"
+                   style="@style/Base.Widget.Material3.CardView.ProfileClickableCard">
+
+                   <androidx.constraintlayout.widget.ConstraintLayout
+                       android:id="@+id/editDarkMode"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent">
+
+                       <ImageView
+                           android:id="@+id/ivDarkModeIcon"
+                           android:layout_width="30dp"
+                           android:layout_height="30dp"
+                           android:layout_marginStart="16dp"
+                           android:src="@drawable/eye"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toTopOf="parent"
+                           android:contentDescription="@string/edit_profile_icon" />
+
+                       <TextView
+                           android:id="@+id/tvDarkMode"
+                           style="@style/TextAppearance.Material3.TitleMedium"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginHorizontal="16dp"
+                           android:text="@string/dark_mode"
+                           app:layout_constraintBottom_toBottomOf="@+id/ivDarkModeIcon"
+                           app:layout_constraintStart_toEndOf="@+id/ivDarkModeIcon"
+                           app:layout_constraintTop_toTopOf="@+id/ivDarkModeIcon" />
+
+                       <com.google.android.material.switchmaterial.SwitchMaterial
+                           android:id="@+id/switchDarkMode"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginEnd="16dp"
+                           android:checked="false"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintTop_toTopOf="parent" />
+
+                   </androidx.constraintlayout.widget.ConstraintLayout>
+               </com.google.android.material.card.MaterialCardView>
+               <com.google.android.material.card.MaterialCardView
+                   android:id="@+id/cardViewLogout"
+                   style="@style/Base.Widget.Material3.CardView.ProfileClickableCard">
+
+                   <androidx.constraintlayout.widget.ConstraintLayout
+                       android:id="@+id/constraintsLogout"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent">
+
+                       <ImageView
+                           android:id="@+id/ivLogoutIcon"
+                           android:layout_width="30dp"
+                           android:layout_height="30dp"
+                           android:layout_marginStart="16dp"
+                           android:src="@drawable/power"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toTopOf="parent"
+                           android:contentDescription="@string/edit_profile_icon" />
+
+                       <TextView
+                           android:id="@+id/tvLogout"
+                           style="@style/TextAppearance.Material3.TitleMedium"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_marginHorizontal="16dp"
+                           android:text="@string/logout"
+                           android:textColor="@color/red"
+                           app:layout_constraintBottom_toBottomOf="@+id/ivLogoutIcon"
+                           app:layout_constraintStart_toEndOf="@+id/ivLogoutIcon"
+                           app:layout_constraintTop_toTopOf="@+id/ivLogoutIcon" />
+
+                   </androidx.constraintlayout.widget.ConstraintLayout>
+               </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -3,11 +3,45 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/splashScreenFragment">
+    app:startDestination="@id/mainFragment">
 
     <fragment
-        android:id="@+id/splashScreenFragment"
-        android:name="com.ab.dev.shoesly.presentation.fragments.splash.SplashScreenFragment"
-        android:label="fragment_splash_screen"
-        tools:layout="@layout/fragment_splash_screen" />
+        android:id="@+id/mainFragment"
+        android:name="com.ab.dev.shoesly.presentation.fragments.main.view.MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_brandsFragment"
+            app:destination="@id/brandsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_brandFragment"
+            app:destination="@id/brandFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/brandsFragment"
+        android:name="com.ab.dev.shoesly.presentation.fragments.brands.BrandsFragment"
+        tools:layout="@layout/fragment_brands">
+        <action
+            android:id="@+id/action_brandsFragment_to_brandFragment"
+            app:destination="@id/brandFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/brandFragment"
+        android:name="com.ab.dev.shoesly.presentation.fragments.brand.view.BrandFragment"
+        tools:layout="@layout/fragment_brand" >
+        <argument
+            android:name="brand"
+            app:argType="com.ab.dev.shoesly.domain.models.data.Brand" />
+        <action
+            android:id="@+id/action_brandFragment_to_shoeDetailFragment"
+            app:destination="@id/shoeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeDetailFragment"
+        android:name="com.ab.dev.shoesly.presentation.fragments.shoeDetail.view.ShoeDetailFragment"
+        tools:layout="@layout/fragment_shoe_detail" >
+        <argument
+            android:name="stockItem"
+            app:argType="com.ab.dev.shoesly.domain.models.data.StockItem" />
+    </fragment>
+
 </navigation>

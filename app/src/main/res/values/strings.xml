@@ -1,6 +1,71 @@
 <resources>
     <string name="app_name">Shoesly</string>
     <string name="login">Login</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="sign_in">Sign In</string>
+    <string name="please_sign_in_to_your_shoesly_account">Please sign in to your Shoesly account</string>
+    <string name="ex_mark_zak_gmail_com" translatable="false">ex: mark.zak@gmail.com</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="join_with_us_create_account">Join with us: <b>Create Account</b></string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="logo_image" translatable="false">Logo Image</string>
+    <string name="app_logo" translatable="false">App Logo</string>
+    <string name="from">From</string>
+    <string name="ab_dev" translatable="false">AB Development</string>
+    <string name="login_to_your_account">Login to your account</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_the_password">Forgot the password?</string>
+    <string name="or_continue_with">or Continue with</string>
+    <string name="create_new_account">Create New Account ?</string>
+    <string name="create_new_account_sign_up">Create New Account</string>
+    <string name="create">Create</string>
+    <string name="full_name">Full Name</string>
+    <string name="scroll_layout" translatable="false">scroll layout</string>
+    <string name="search">Search</string>
+    <string name="notification">Notification</string>
+    <string name="brands">Brands</string>
+    <string name="see_all">See All</string>
+    <string name="most_popular">Most Popular</string>
+    <string name="shoe_image" translatable="false">Shoe Image</string>
+    <string name="favorite_icon" translatable="false">Favorite Icon</string>
+    <string name="rating_icon" translatable="false">Rating Icon</string>
+    <string name="home">Home</string>
+    <string name="cart">Cart</string>
+    <string name="profile">Profile</string>
+    <string name="orders">Orders</string>
+
+    <!-- Network Exception Strings -->
+    <string name="un_authorized" translatable="false">Can\'t find user with this email or password</string>
+    <string name="bad_request" translatable="false">Wrong Email Or Password</string>
+    <!-- Network Exception Strings -->
+    <!-- Firebase -->
+    <string name="web_client_id" translatable="false">704106402674-s02noi4hd6s95u7v00m6jc71gtcf9tve.apps.googleusercontent.com</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="this_field_cant_be_empty">This field can\'t be empty</string>
+    <string name="empty" translatable="false" />
+    <string name="account_created_successfully">Account Created Successfully</string>
+    <string name="total_price">Total Price</string>
+    <string name="add_to_cart">Add To Cart</string>
+    <string name="description">Description</string>
+    <string name="size">Size</string>
+    <string name="color">Color</string>
+    <string name="quantity">Quantity</string>
+    <string name="view_reviews">View Reviews</string>
+    <string name="selected_color">Selected Color</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="edit_profile_icon">Edit Profile Icon</string>
+    <string name="arrow">Arrow</string>
+    <string name="address">Address</string>
+    <string name="payment">Payment</string>
+    <string name="language">Language</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="logout">Logout</string>
+    <string name="cart_item" translatable="false">Cart Item</string>
+    <string name="remove_item" translatable="false">Remove Item</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+    <string name="checkout">Checkout</string>
 </resources>

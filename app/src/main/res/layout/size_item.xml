@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="size"
+            type="com.ab.dev.shoesly.domain.models.data.Size" />
+
+        <variable
+            name="clickListener"
+            type="com.ab.dev.shoesly.app.utils.callback.AdapterClickListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="5dp"
+        android:onClick="@{() -> clickListener.onClick(size)}"
+        app:strokeColor="?attr/colorPrimary"
+        isChecked="@{size.checked}"
+        app:cardCornerRadius="100dp">
+
+        <TextView
+            android:id="@+id/tvSizeNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            isChecked="@{size.checked}"
+            android:text="@{String.valueOf(size.size)}"
+            android:textColor="?attr/colorPrimary"
+            android:layout_gravity="center" />
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

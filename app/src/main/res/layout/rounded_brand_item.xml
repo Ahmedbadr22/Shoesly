@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="com.ab.dev.shoesly.app.utils.callback.AdapterClickListener" />
+
+        <variable
+            name="brand"
+            type="com.ab.dev.shoesly.domain.models.data.Brand" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:strokeColor="?attr/colorPrimary"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="50dp"
+        app:strokeWidth="2dp"
+        android:onClick="@{() -> clickListener.onClick(brand)}">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:minWidth="50dp"
+            android:text="@{brand.name}"
+            android:textColor="?attr/colorPrimary"
+            android:textAlignment="center" />
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="com.ab.dev.shoesly.app.utils.callback.AdapterClickListener" />
+        
+        <variable
+            name="item"
+            type="com.ab.dev.shoesly.domain.models.data.StockItem" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:onClick="@{() -> clickListener.onClick(item)}"
+        android:paddingVertical="8dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:cardBackgroundColor="@color/gray"
+            app:strokeWidth="0dp"
+            app:cardCornerRadius="16dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivShoe"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    setImageUrl="@{item.shoe.image}"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/shoe_image"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <ImageView
+                    android:id="@+id/ivFavorite"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/heart"
+                    android:layout_gravity="end"
+                    android:layout_margin="8dp"
+                    android:contentDescription="@string/favorite_icon" />
+
+            </FrameLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvShoeTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{item.shoe.title}"
+            tools:text="Product name"
+            android:maxLines="1"
+            style="@style/TextAppearance.Material3.TitleLarge" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="start|center">
+
+            <ImageView
+                android:id="@+id/ivReteIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:srcCompat="@drawable/star"
+                android:contentDescription="@string/rating_icon" />
+
+            <TextView
+                android:id="@+id/tvRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                style="@style/TextAppearance.Material3.TitleSmall"
+                android:text="@{String.valueOf(item.shoe.rate)}"/>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"/>
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvShoePrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            style="@style/TextAppearance.Material3.TitleMedium"
+            app:setPrice="@{item.shoe.price}"/>
+
+    </LinearLayout>
+</layout>

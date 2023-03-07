@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="com.ab.dev.shoesly.app.utils.callback.AdapterClickListener" />
+
+        <variable
+            name="brand"
+            type="com.ab.dev.shoesly.domain.models.data.Brand" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:layout_gravity="center"
+        android:onClick="@{() -> clickListener.onClick(brand)}"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:cardCornerRadius="100dp"
+            app:strokeWidth="0dp"
+            android:gravity="center"
+            app:cardBackgroundColor="@color/gray">
+
+            <ImageView
+                android:id="@+id/ivBrandImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/apple"
+                app:setImageUrl="@{brand.logo}"
+                android:layout_margin="15dp"
+                android:contentDescription="@{brand.name}" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAlignment="center"
+            android:text="@{brand.name}"/>
+
+    </LinearLayout>
+</layout>
